@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Owners List</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+        }
+        h1 {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Tech Inspection List</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Equipment</th>
+                    <th>Date</th>
+                    <th>Equipment Condition</th>
+                    <th>Reason of Destruction</th>
+                    <th>Type Inspection</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for tech in techs %}
+                    <tr>
+                        <td>{{ tech[1] }}</td>
+                        <td>{{ tech[2] }}</td>
+                        <td>{{ tech[3] }}</td>
+                        <td>{{ tech[4] }}</td>
+                        <td>{{ tech[5] }}</td>
+                        <td>
+                            <form action="/tech/delete/{{ tech[0] }}" method="post" style="display:inline;">
+                                <button type="submit">Delete</button>
+                            </form>
+                        </td>
+                        <td>
+                            <form action="/tech/put/{{ tech[0] }}" method="get" style="display:inline;">
+                                <button type="submit">Edit</button>
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <form action="/tech/add" method="post">
+        <input type="text"  name="equip_id" placeholder="Equipment" required>
+        <input type="text"  name="date" placeholder="Date" required>
+
+        <input type="text" name="equip_cond" placeholder="Equipment Condition"required>
+
+        <input type="text"  name="reason" placeholder="Reason of Destruction">
+
+        <input type="text"  name="type" placeholder="Type Inspection" required>
+            <button type="submit">Add Tech Inspection</button>
+        </form>
+    </div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 0;
+        }
+        .menu-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .menu-button {
+            display: inline-block;
+            margin: 10px;
+            padding: 15px 30px;
+            font-size: 18px;
+            text-decoration: none;
+            color: white;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .menu-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu-container">
+        <h1>Menu</h1>
+        <a href="/production_area/" class="menu-button">Production Area</a>
+        <a href="/equip/" class="menu-button">Equipment</a>
+        <a href="/tech/" class="menu-button">Tech Inspection</a>
+        <a href="/employee/" class="menu-button">Employee</a>
+<!--        #<a href="/equip/failed" class="menu-button">Failed equipment</a>-->
+<!--        #<a href="/equip/history" class="menu-button">Equipment history</a>-->
+<!--        <a href="/employee/date" class="menu-button">Employee date</a>-->
+    </div>
+</body>
+</html>

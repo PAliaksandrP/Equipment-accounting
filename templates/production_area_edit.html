@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Owner</title>
+</head>
+<body>
+    <form action="/production_area/put/{{ area[0] }}" method="post">
+        <label for="number_area">Number Area:</label>
+        <input type="text" id = "number_area" name="number_area" value="{{ area[1] }}" required>
+        <label for="name">Name:</label>
+        <input type="text" id = "name" name="name"  value="{{ area[2] }}" required>
+
+        <button type="submit">Update Owner</button>
+    </form>
+</body>
+</html>

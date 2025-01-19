@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Equip</title>
+</head>
+<body>
+    <form action="/employee/put/{{ employee[0] }}" method="post">
+        <label for="tech_id">tech id:</label>
+        <input type="text" id="tech_id" name="tech_id" value="{{ employee[1] }}" required>
+
+        <label for="number">Personal Number:</label>
+        <input type="text" id="number" name="number" value="{{ employee[2] }}" required>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="{{ employee[3] }}" required>
+        <label for="position">Position:</label>
+        <input type="text" id="position" name="position" value="{{ employee[4] }}" required>
+
+
+        <button type="submit">Update Area</button>
+    </form>
+</body>
+</html>

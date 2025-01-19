@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Equip</title>
+</head>
+<body>
+    <form action="/tech/put/{{ tech[0] }}" method="post">
+        <label for="equip_id">Equip id:</label>
+        <input type="text" id="equip_id" name="equip_id" value="{{ tech[1] }}" required>
+
+        <label for="date">Date:</label>
+        <input type="text" id="date" name="date" value="{{ tech[2] }}" required>
+        <label for="equip_cond">Equip Condition:</label>
+        <input type="text" id="equip_cond" name="equip_cond" value="{{ tech[3] }}" required>
+        <label for="reason">Reason Destruction:</label>
+        <input type="text" id="reason" name="reason" value="{{ tech[4] }}">
+        <label for="type">Type Inspection:</label>
+        <input type="text" id="type" name="type" value="{{ tech[5] }}" required>
+
+
+        <button type="submit">Update Area</button>
+    </form>
+</body>
+</html>

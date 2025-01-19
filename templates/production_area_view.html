@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Owners List</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+        }
+        h1 {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Production Area List</h1>
+        <table>
+            <thead>
+                <tr>
+
+                    <th>Number area</th>
+                    <th>Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for area in areas %}
+                    <tr>
+                        <td>{{ area[1] }}</td>
+                        <td>{{ area[2] }}</td>
+                        <td>
+                            <form action="/production_area/delete/{{ area[0] }}" method="post" style="display:inline;">
+                                <button type="submit">Delete</button>
+                            </form>
+                        </td>
+                        <td>
+                            <form action="/production_area/put/{{ area[0] }}" method="get" style="display:inline;">
+                                <button type="submit">Edit</button>
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <form action="/production_area/add" method="post">
+            <input type="text" name="number_area" placeholder="Number Area" required>
+            <input type="text" name="name" placeholder="Name" required>
+            <button type="submit">Add Owner</button>
+        </form>
+    </div>
+
+
+
+</body>
+</html>

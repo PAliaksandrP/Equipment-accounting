@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Equip</title>
+</head>
+<body>
+    <form action="/equip/put/{{ equip[0] }}" method="post">
+        <label for="prod_id">Production Area:</label>
+        <input type="text" id="prod_id" name="prod_id" value="{{ equip[1] }}" required>
+
+        <label for="number">Number Equip:</label>
+        <input type="text" id="number" name="number" value="{{ equip[2] }}" required>
+        <label for="type">Number Equip:</label>
+        <input type="text" id="type" name="type" value="{{ equip[3] }}" required>
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" value="{{ equip[4] }}" required>
+
+        <button type="submit">Update Area</button>
+    </form>
+</body>
+</html>

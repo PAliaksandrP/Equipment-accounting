@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inspection History</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+    <h1>Inspection History</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>inspection_date</th>
+                <th>inventory_number</th>
+                <th>equipment_name</th>
+                <th>equipment_type</th>
+                <th>inspection_result</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for history in histroies %}
+                <tr>
+                    <td>{{ history.equipment_name }}</td>
+                    <td>{{ history.equipment_type }}</td>
+                    <td>{{ history.inspection_date }}</td>
+                    <td>{{ history.inventory_number }}</td>
+                    <td>{{ history.inspection_result }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
